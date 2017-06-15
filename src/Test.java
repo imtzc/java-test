@@ -6,10 +6,28 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  */
 public class Test {
 
+    static {
+        System.out.print("2");
+    }
+
+    private static Test test = new Test();
+
+    {
+        System.out.print("3");
+    }
+
     public static void main(String[] args) {
 
-        ReentrantReadWriteLock rrwl = new ReentrantReadWriteLock();
-
-        ReentrantLock rl = new ReentrantLock();
+        System.out.print("1");
+        new Test();
     }
+}
+
+class TestClassLoad {
+
+//    public static void main(String[] args) {
+//
+//        System.out.println("--------------");
+//        new Test();
+//    }
 }
