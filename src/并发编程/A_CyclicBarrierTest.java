@@ -38,7 +38,7 @@ public class A_CyclicBarrierTest {
             @Override
             public void run() {
 
-                System.out.println("人到齐了，开车吧....都系好安全带了吗？");
+                System.out.println(Thread.currentThread().getName()+"人都到齐了，开车吧....都系好安全带了吗？");
             }
         });
 

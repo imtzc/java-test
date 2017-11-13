@@ -1,33 +1,23 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.concurrent.locks.ReentrantLock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
+import java.util.regex.Pattern;
 
 /**
  * Created by don on 2017/6/5.
  */
 public class Test {
 
-    static {
-        System.out.print("2");
-    }
-
-    private static Test test = new Test();
-
-    {
-        System.out.print("3");
-    }
-
     public static void main(String[] args) {
 
-        System.out.print("1");
-        new Test();
+        SimpleDateFormat formatter = new SimpleDateFormat("MM/dd/yyyy hh:mm:ss");
+        try {
+
+            System.out.println(new SimpleDateFormat("yyyy-MM-dd").parse("2017-12-12"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
-}
-
-class TestClassLoad {
-
-//    public static void main(String[] args) {
-//
-//        System.out.println("--------------");
-//        new Test();
-//    }
 }
